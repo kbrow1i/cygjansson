@@ -9,10 +9,35 @@ SUMMARY="A C library for encoding, decoding, and manipulating JSON data"
 DESCRIPTION="Jansson is a C library for encoding, decoding, and manipulating JSON
 data"
 
-PKG_NAMES="libjansson4 libjansson-devel"
+DEPEND="python3-sphinx"
+
+PKG_NAMES="libjansson4 libjansson-devel libjansson-doc"
 
 libjansson4_SUMMARY="${SUMMARY} (runtime)"
 libjansson4_CONTENTS="usr/bin/*-4.dll"
 
 libjansson_devel_SUMMARY="${SUMMARY} (development)"
-libjansson_devel_CONTENTS="usr/include usr/lib usr/share"
+libjansson_devel_CONTENTS="
+	--exclude=usr/share/doc/jansson/html
+	usr/include
+	usr/lib
+	usr/share/doc"
+
+libjansson_doc_SUMMARY="${SUMMARY} (documentation)"
+libjansson_doc_CONTENTS="usr/share/doc/jansson/html"
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	cd ${B}
+	cygconf
+	cygmake
+	cygmake html
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+	docinto html
+	dodoc doc/_build/html/*
+}
