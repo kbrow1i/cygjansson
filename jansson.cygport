@@ -7,7 +7,7 @@ SRC_URI="${HOMEPAGE}/releases/jansson-${VERSION}.tar.bz2"
 CATEGORY="Libs"
 SUMMARY="A C library for encoding, decoding, and manipulating JSON data"
 DESCRIPTION="Jansson is a C library for encoding, decoding, and manipulating JSON
-data"
+data."
 
 DEPEND="python3-sphinx"
 
@@ -40,4 +40,10 @@ src_install() {
 	cyginstall
 	docinto html
 	dodoc doc/_build/html/*
+}
+
+src_test() {
+        PATH=${B}/src/.libs/:${PATH}
+        cd ${B}
+        make -i check
 }
