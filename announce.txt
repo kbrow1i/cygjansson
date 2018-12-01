@@ -1,18 +1,25 @@
-From cygwin-announce-jansson-2.11-1 Tue Sep 11 15:42:58 2018
+From cygwin-announce-jansson-2.12-1 Sat Dec 01 15:59:33 2018
 From: Ken Brown <kbrown@cornell.edu>
 To: cygwin-announce@cygwin.com
-Date: Tue, 11 Sep 2018 15:42:58 -0400
-Message-Id: <20180911154258.17112-1-kbrown@cornell.edu>
-Subject: jansson 2.11-1
+Date: Sat, 01 Dec 2018 15:59:33 -0500
+Message-Id: <20181201155933.48828-1-kbrown@cornell.edu>
+Subject: jansson 2.12-1
 
-The following packages have been added to the Cygwin distribution:
+The following packages have been uploaded to the Cygwin distribution:
 
-* libjansson4-2.11-1
-* libjansson-devel-2.11-1
-* libjansson-doc-2.11-1
+* libjansson4-2.12-1
+* libjansson-devel-2.12-1
+* libjansson-doc-2.12-1
 
 Jansson is a C library for encoding, decoding, and manipulating JSON
 data.
+
+This is an update to the latest upstream release.  It is a bug fix
+release.  See
+
+  https://groups.google.com/forum/#!topic/jansson-users/acNwlvHBIvU
+
+for details.
 
 Ken Brown
 Cygwin's Jansson maintainer
